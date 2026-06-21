@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f2f4f7;
+}
+
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  padding: 30px;
+  gap: 25px;
+}
+
+/* Panel lateral */
+.sidebar {
+  width: 250px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  height: fit-content;
+}
+
+.sidebar h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.usuario {
+  background: #d8f0d8;
+  padding: 12px;
+  border-radius: 6px;
+  color: #333;
+}
+
+/* Contenido principal */
+.content {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+.content h1 {
+  margin: 20px 0;
+  color: #333;
+}
+
+.btn-informe {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-verde {
+  background: #45c25b;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-verde:hover {
+  background: #39ac4d;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #e5e5e5;
+  padding: 18px;
+  text-align: center;
+}
+
+th {
+  background: #f5f5f5;
+  font-weight: 600;
+}

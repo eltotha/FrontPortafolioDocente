@@ -1,0 +1,78 @@
+
+
+.tipo-usuario-container {
+  font-family: sans-serif; /* Usamos una fuente sans-serif limpia */
+  padding: 20px;
+  background-color: #f8f9fa; /* Color de fondo ligero para que resalte la tabla */
+}
+
+.tipo-usuario-header {
+  margin-bottom: 20px;
+}
+
+.tipo-usuario-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.create-new-link {
+  color: #007bff; /* Color azul estándar para los enlaces */
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.create-new-link:hover {
+  text-decoration: underline; /* Efecto al pasar el ratón */
+}
+
+.tipo-usuario-table {
+  width: 100%;
+  border-collapse: collapse; /* Para que las líneas divisorias sean simples */
+  margin-top: 10px;
+  background-color: white; /* Tabla con fondo blanco */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sutil sombra para profundidad */
+}
+
+.tipo-usuario-table th, 
+.tipo-usuario-table td {
+  padding: 12px 15px; /* Espaciado interno de las celdas */
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Línea divisoria horizontal */
+}
+
+.tipo-usuario-table th {
+  background-color: #f1f3f5; /* Fondo de la cabecera ligeramente distinto */
+  font-weight: 600;
+  color: #555;
+}
+
+.actions-header {
+  text-align: right; /* Alineamos el texto de la cabecera de acciones a la derecha */
+}
+
+.tp-nombre {
+  font-weight: 500;
+  color: #333;
+}
+
+.tp-descripcion {
+  color: #666;
+}
+
+.action-links {
+  text-align: right; /* Alineamos los enlaces a la derecha */
+  white-space: nowrap; /* Evitamos que los enlaces se rompan en varias líneas */
+}
+
+.action-links a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 5px; /* Espaciado entre los enlaces y la barra vertical */
+}
+
+.action-links a:hover {
+  text-decoration: underline;
+}

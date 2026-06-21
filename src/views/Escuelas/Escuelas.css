@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+.escuelas-page {
+  padding: 2rem;
+  width: 100%;
+  background: #f5f6fa;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.escuelas-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.escuelas-header h1 {
+  font-size: 3rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.btn-crear {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-crear:hover {
+  background: #0b5ed7;
+}
+
+.tabla-container {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  padding: 18px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  border-bottom: 2px solid #dee2e6;
+}
+
+tbody td {
+  padding: 18px;
+  border-bottom: 1px solid #ececec;
+}
+
+tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.estado {
+  color: #198754;
+  font-weight: 500;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-editar,
+.btn-detalles,
+.btn-eliminar {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-editar {
+  background: #ffc107;
+  color: #212529;
+}
+
+.btn-detalles {
+  background: #0dcaf0;
+  color: white;
+}
+
+.btn-eliminar {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-editar:hover,
+.btn-detalles:hover,
+.btn-eliminar:hover {
+  opacity: 0.9;
+}
