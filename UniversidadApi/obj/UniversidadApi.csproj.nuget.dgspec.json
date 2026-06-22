@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Unan Leon\\Ingenieria del Software\\proyectos react\\UniversidadApi\\UniversidadApi.csproj": {}
+    "E:\\Unan Leon\\Ingenieria del Software\\proyectos react\\FrontPortafolioDocente\\UniversidadApi\\UniversidadApi.csproj": {}
   },
   "projects": {
-    "E:\\Unan Leon\\Ingenieria del Software\\proyectos react\\UniversidadApi\\UniversidadApi.csproj": {
+    "E:\\Unan Leon\\Ingenieria del Software\\proyectos react\\FrontPortafolioDocente\\UniversidadApi\\UniversidadApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Unan Leon\\Ingenieria del Software\\proyectos react\\UniversidadApi\\UniversidadApi.csproj",
+        "projectUniqueName": "E:\\Unan Leon\\Ingenieria del Software\\proyectos react\\FrontPortafolioDocente\\UniversidadApi\\UniversidadApi.csproj",
         "projectName": "UniversidadApi",
-        "projectPath": "E:\\Unan Leon\\Ingenieria del Software\\proyectos react\\UniversidadApi\\UniversidadApi.csproj",
+        "projectPath": "E:\\Unan Leon\\Ingenieria del Software\\proyectos react\\FrontPortafolioDocente\\UniversidadApi\\UniversidadApi.csproj",
         "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-        "outputPath": "E:\\Unan Leon\\Ingenieria del Software\\proyectos react\\UniversidadApi\\obj\\",
+        "outputPath": "E:\\Unan Leon\\Ingenieria del Software\\proyectos react\\FrontPortafolioDocente\\UniversidadApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config"
