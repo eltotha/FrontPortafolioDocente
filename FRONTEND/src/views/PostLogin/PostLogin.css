@@ -1,0 +1,200 @@
+/* ==========================================================================
+   PANTALLA CINEMÁTICA PREMIUM
+   ========================================================================== */
+.premium-boot-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: #f8fafc !important; /* Mismo fondo gris claro que el Login */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 99999 !important;
+  overflow: hidden !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+
+/* Red de líneas de fondo fijas */
+.boot-grid-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.04) 1px, transparent 1px) !important;
+  background-size: 32px 32px !important;
+  z-index: 1 !important;
+}
+
+/* CONTENEDOR CENTRAL */
+.boot-cinematic-card {
+  position: relative !important;
+  z-index: 10 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 480px !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   EFECO 1: LOGO EMERGIENDO DEL VACÍO
+   ========================================================================== */
+.boot-logo-wrapper {
+  margin-bottom: 24px !important;
+  perspective: 1000px !important;
+}
+
+.boot-vector-logo {
+  width: 72px !important;
+  height: 72px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 32px !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 113, 242, 0.1) !important;
+  position: relative !important;
+  
+  /* Animación inicial: Viene desde atrás con rotación física */
+  transform: scale(0.3) rotateY(90deg) !important;
+  opacity: 0 !important;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease !important;
+}
+
+/* Anillo de energía expansivo alrededor del logo */
+.logo-glow-ring {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 2px solid #0f71f2 !important;
+  border-radius: 20px !important;
+  opacity: 0 !important;
+  transform: scale(1) !important;
+}
+
+/* CONTROL DE DISPARO POR ESTADO EN CSS (FASE ENSAMBLADO) */
+.fase-ensamblado .boot-vector-logo {
+  transform: scale(1) rotateY(0deg) !important;
+  opacity: 1 !important;
+}
+
+.fase-ensamblado .logo-glow-ring {
+  animation: pulseGlow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  animation-delay: 0.5s !important;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1) !important; opacity: 0.8 !important; }
+  100% { transform: scale(1.4) !important; opacity: 0 !important; }
+}
+
+/* ==========================================================================
+   EFECTO 2: IDENTIDAD Y REVELADO DE TEXTO (SHIMMER)
+   ========================================================================== */
+.boot-identity-group {
+  margin-bottom: 40px !important;
+  opacity: 0 !important;
+  transform: translateY(10px) !important;
+  transition: transform 0.6s ease, opacity 0.6s ease !important;
+  transition-delay: 0.3s !important;
+}
+
+.fase-ensamblado .boot-identity-group {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.boot-tagline {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  letter-spacing: 0.15em !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+/* Texto del Nombre del usuario con barrido de luz metálica */
+.boot-user-welcome {
+  font-size: 36px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
+  letter-spacing: -0.03em !important;
+  position: relative !important;
+  display: inline-block !important;
+  
+  /* Barrido óptico */
+  background: linear-gradient(to right, #0f172a 20%, #0f71f2 50%, #0f172a 80%) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: shineText 2s linear infinite !important;
+}
+
+@keyframes shineText {
+  to { background-position: 200% center !important; }
+}
+
+/* ==========================================================================
+   EFECTO 3: BARRA DE CARGA DE PRECISIÓN CONTINUA
+   ========================================================================== */
+.boot-footer-loader {
+  width: 100% !important;
+  max-width: 320px !important;
+  opacity: 0 !important;
+  transition: opacity 0.4s ease !important;
+  transition-delay: 0.5s !important;
+}
+
+.fase-ensamblado .boot-footer-loader {
+  opacity: 1 !important;
+}
+
+.boot-status-msg {
+  font-size: 13px !important;
+  color: #64748b !important;
+  margin: 0 0 10px 0 !important;
+  font-weight: 500 !important;
+}
+
+/* Riel de progreso */
+.modern-progress-rail {
+  width: 100% !important;
+  height: 4px !important;
+  background-color: #e2e8f0 !important;
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Relleno acelerado por hardware */
+.modern-progress-bar-fill {
+  height: 100% !important;
+  width: 0% !important;
+  background-color: #0f71f2 !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 0 8px rgba(15, 113, 242, 0.4) !important;
+}
+
+/* El llenado usa curvas físicas de aceleración (Cubic Bezier) */
+.fase-ensamblado .modern-progress-bar-fill {
+  width: 100% !important;
+  transition: width 1.6s cubic-bezier(0.65, 0, 0.35, 1) !important;
+}
+
+/* Desvanecimiento final antes de saltar al Dashboard */
+.fase-completo .boot-cinematic-card {
+  transform: scale(0.98) !important;
+  opacity: 0 !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}

@@ -1,0 +1,216 @@
+/* CONTEXTO GENERAL DEL CONTENEDOR */
+.modern-dashboard {
+  display: flex !important;
+  gap: 32px !important;
+  width: 100% !important;
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding: 24px !important;
+  font-family: var(--sans) !important;
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   PANEL LATERAL (SIDEBAR)
+   ========================================================================== */
+.modern-sidebar {
+  width: 280px !important;
+  background-color: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  height: fit-content !important;
+  box-shadow: var(--shadow) !important;
+  box-sizing: border-box !important;
+}
+
+.sidebar-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 20px !important;
+}
+
+.sidebar-header h3 {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.online-indicator {
+  width: 8px !important;
+  height: 8px !important;
+  background-color: #238636 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 8px #238636 !important;
+}
+
+/* Caja de perfil interna (Forzada a fondo oscuro estricto para mantener tu estilo actual) */
+.user-profile-box {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 16px 12px !important;
+  background-color: #1e2530 !important; /* Forzado a mantener contraste con las letras claras */
+  border-radius: 10px !important;
+  border: 1px solid #2d3748 !important;
+}
+
+.user-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #0f71f2 !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+}
+
+.user-info {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.user-name {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important; /* Forzado a blanco nítido */
+}
+
+.user-role-badge {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #38bdf8 !important; /* Celeste eléctrico para alta legibilidad */
+  margin-top: 2px !important;
+}
+
+/* ==========================================================================
+   CONTENIDO PRINCIPAL
+   ========================================================================== */
+.modern-content {
+  flex: 1 !important;
+  box-sizing: border-box !important;
+}
+
+.content-welcome-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  margin-bottom: 32px !important;
+  text-align: left !important;
+}
+
+.content-welcome-header h1 {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important; /* Forzado a gris oscuro legible */
+  margin: 0 0 4px 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.subtitle-text {
+  font-size: 14px !important;
+  color: #475569 !important; /* Gris intermedio legible */
+  opacity: 1 !important;
+}
+
+/* Botón principal de reportes */
+.btn-action-primary {
+  background-color: #0f71f2 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 12px 20px !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn-action-primary:hover {
+  background-color: #0c5dc7 !important;
+  box-shadow: 0 4px 12px rgba(15, 113, 242, 0.2) !important;
+}
+
+/* ==========================================================================
+   CUADRÍCULA DE TARJETAS (CORRECCIÓN DE INVISIBILIDAD)
+   ========================================================================== */
+.modules-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+.module-card {
+  background-color: #ffffff !important; /* Fondo blanco sólido */
+  border: 1px solid #e2e8f0 !important; 
+  border-radius: 12px !important;
+  padding: 24px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+  cursor: pointer !important;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+.module-card:hover {
+  border-color: #0f71f2 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 20px -8px rgba(148, 163, 184, 0.3) !important;
+}
+
+.module-icon {
+  font-size: 24px !important;
+  padding: 10px !important;
+  background-color: #f1f5f9 !important; /* Fondo gris sutil para el icono */
+  border-radius: 8px !important;
+  line-height: 1 !important;
+}
+
+.module-card:hover .module-icon {
+  background-color: rgba(15, 113, 242, 0.08) !important;
+}
+
+/* Títulos de los módulos obligados a contrastar */
+.module-details h3 {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #0f172a !important; /* Forzado a oscuro */
+  margin: 0 0 6px 0 !important;
+}
+
+/* Descripciones obligadas a contrastar */
+.module-details p {
+  font-size: 13px !important;
+  color: #475569 !important; /* Forzado a gris corporativo */
+  line-height: 140% !important;
+  margin: 0 !important;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 968px) {
+  .modern-dashboard {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .modern-sidebar {
+    width: 100% !important;
+  }
+  .content-welcome-header {
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: flex-start !important;
+  }
+  .btn-action-primary {
+    width: 100% !important;
+  }
+}

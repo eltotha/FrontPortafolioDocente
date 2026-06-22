@@ -1,0 +1,88 @@
+/* CONTENEDOR FLOTANTE SUPERIOR (HEADER) */
+.main-header {
+  width: 100% !important;
+  background-color: #ffffff !important; /* Forzado a blanco sólido para garantizar contraste */
+  border-bottom: 1px solid #e2e8f0 !important; /* Borde gris sutil */
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  box-sizing: border-box !important;
+}
+
+.header-container {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding: 14px 24px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* BRANDING (IZQUIERDA) */
+.header-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  cursor: pointer !important;
+  transition: opacity 0.15s ease !important;
+}
+
+.header-brand:hover {
+  opacity: 0.85 !important;
+}
+
+.brand-icon {
+  font-size: 20px !important;
+  line-height: 1 !important;
+}
+
+.brand-text {
+  font-family: var(--sans) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important; /* CORRECCIÓN: Forzado a gris oscuro para que sea visible siempre */
+  letter-spacing: -0.02em !important;
+}
+
+/* BARRA DE NAVEGACIÓN (DERECHA) */
+.modern-navbar {
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+/* Enlaces base estilo Finix App */
+.nav-item {
+  text-decoration: none !important;
+  font-family: var(--sans) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #475569 !important; /* CORRECCIÓN: Forzado a gris intermedio nítido */
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  transition: all 0.15s ease-in-out !important;
+  box-sizing: border-box !important;
+}
+
+/* Estado al pasar el mouse por encima */
+.nav-item:hover {
+  background-color: #f1f5f9 !important; /* Fondo gris claro sutil */
+  color: #0f172a !important;            /* Texto más oscuro */
+}
+
+/* ESTADO ACTIVO (Ruta actual en la que está el usuario) */
+.nav-item.active {
+  background-color: rgba(15, 113, 242, 0.08) !important; /* Fondo azul traslúcido */
+  color: #0f71f2 !important;                             /* Azul corporativo nítido */
+}
+
+/* BOTÓN DE CIERRE DE SESIÓN AGRESIVO/REFINADO */
+.nav-item.logout-button {
+  color: #64748b !important; 
+}
+
+.nav-item.logout-button:hover {
+  background-color: #fef2f2 !important; 
+  color: #ef4444 !important;            
+}

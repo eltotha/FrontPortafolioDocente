@@ -1,0 +1,139 @@
+/* IMPORTACIÓN DE FUENTES DE ALTA LEGIBILIDAD (INTER Y JETBRAINS MONO) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+  --text: #334155;
+  --text-h: #0f172a;
+  --bg: #f8fafc;        /* <-- VERIFICA ESTO: Debe ser #f8fafc (Gris claro SaaS), NO #fff */
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+  --accent: #0f71f2;
+  /* ... resto de tu index.css actualizado ... */
+
+  
+  /* Acentos de Color del Sistema (Cambiado de Morado a Azul Corporativo) */
+  --accent: #0f71f2;
+  --accent-bg: rgba(15, 113, 242, 0.08);
+  --accent-border: rgba(15, 113, 242, 0.4);
+  --shadow: rgba(148, 163, 184, 0.1) 0px 10px 15px -3px, rgba(148, 163, 184, 0.05) 0px 4px 6px -2px;
+
+  /* Declaración de Fuentes Modernas */
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --heading: 'Inter', system-ui, -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+
+  /* Configuración de Texto Base */
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.011em; /* Ajuste óptimo para la fuente Inter */
+  color-scheme: light dark;
+  color: var(--text);
+  background-color: var(--bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* MODO OSCURO AUTOMÁTICO (Sincronizado con el Sistema Operativo) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #94a3b8;        /* Gris claro suave */
+    --text-h: #f8fafc;      /* Blanco brillante para títulos */
+    --bg: #0f172a;          /* Fondo azul oscuro profundo */
+    --border: #1e293b;      /* Bordes internos oscuros */
+    --code-bg: #1e293b;
+    --accent: #38bdf8;      /* Celeste eléctrico para acentos en modo oscuro */
+    --accent-bg: rgba(56, 189, 248, 0.15);
+    --accent-border: rgba(56, 189, 248, 0.5);
+    --shadow: rgba(0, 0, 0, 0.3) 0px 10px 15px -3px, rgba(0, 0, 0, 0.2) 0px 4px 6px -2px;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+/* CORRECCIÓN DE LA ESTRUCTURA PRINCIPAL DEL CONTENEDOR VITE */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left; /* CORREGIDO: Mantiene el flujo de formularios a la izquierda */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* ESTILOS DE TÍTULOS ACADÉMICOS */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+  color: var(--text-h);
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.25rem; /* 36px equivalente adaptativo */
+  font-weight: 800;   /* Extra Bold para títulos limpios */
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;  /* 24px */
+  font-weight: 700;   /* Bold */
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+/* COMPONENTES DE CÓDIGO Y MATRICES */
+code,
+.counter {
+  font-family: var(--mono);
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  padding: 2px 6px;
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+/* NORMALIZACIÓN RÁPIDA DE TABLAS Y FORMULARIOS GLOBALES */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background-color: var(--code-bg);
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+/* MEDIA QUERY PARA AGILIDAD EN PANTALLAS PEQUEÑAS */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 15px;
+  }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.25rem; }
+}
