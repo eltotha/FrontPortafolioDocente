@@ -8,6 +8,7 @@ export default function Home() {
   
   const [rol, setRol] = useState('')
   const [nombreCompleto, setNombreCompleto] = useState('Usuario')
+  const [faseSalida, setFaseSalida] = useState(false)
 
   useEffect(() => {
     const userJson = localStorage.getItem('user')
@@ -26,9 +27,18 @@ export default function Home() {
     }
   }, [navigate])
 
+  // Método centralizado para capturar y reproducir la animación de salida
+  const manejarNavegacion = (ruta) => {
+    setFaseSalida(true)
+    setTimeout(() => {
+      navigate(ruta)
+    }, 500) // Sincronizado estrictamente con la duración del CSS (0.5s)
+  }
+
   return (
     <BaseLayout>
-      <div className="modern-dashboard">
+      <div className={`modern-dashboard ${faseSalida ? 'dashboard-leaving' : 'dashboard-entering'}`}>
+        
         {/* PANEL LATERAL DINÁMICO */}
         <aside className="modern-sidebar">
           <div className="sidebar-header">
@@ -46,23 +56,24 @@ export default function Home() {
           </div>
         </aside>
 
-        {/* CONTENIDO PRINCIPAL */}
+        {/* CONTENEDOR PRINCIPAL */}
         <main className="modern-content">
           <div className="content-welcome-header">
-            <div>
+            <div className="header-text-block">
               <h1>Mantenimiento del Sistema</h1>
               <p className="subtitle-text">Selecciona un módulo administrativo para gestionar los registros actuales.</p>
             </div>
-            <button className="btn-action-primary" onClick={() => navigate('/reportemateriascarrera')}>
+            <button className="btn-action-primary" onClick={() => manejarNavegacion('/reportemateriascarrera')}>
               📊 Generar Informe de Datos
             </button>
           </div>
 
           {/* CUADRÍCULA DE MÓDULOS DE ACCESO */}
           <div className="modules-grid">
-            {/* REGLA: Gestión de usuarios SOLO al Administrador */}
+            
+            {/* Gestión de usuarios */}
             {rol === 'Administrador' && (
-              <div className="module-card" onClick={() => navigate('/usuarios')}>
+              <div className="module-card card-animate-1" onClick={() => manejarNavegacion('/usuarios')}>
                 <div className="module-icon icon-users">👥</div>
                 <div className="module-details">
                   <h3>Usuarios</h3>
@@ -71,9 +82,9 @@ export default function Home() {
               </div>
             )}
 
-            {/* REGLA: Gestión de escuelas SOLO al Administrador */}
+            {/* Gestión de escuelas */}
             {rol === 'Administrador' && (
-              <div className="module-card" onClick={() => navigate('/escuelas')}>
+              <div className="module-card card-animate-2" onClick={() => manejarNavegacion('/escuelas')}>
                 <div className="module-icon icon-schools">🏢</div>
                 <div className="module-details">
                   <h3>Escuelas</h3>
@@ -82,8 +93,8 @@ export default function Home() {
               </div>
             )}
 
-            {/* AMBOS ROLES can access Carreras and Materias */}
-            <div className="module-card" onClick={() => navigate('/carreras')}>
+            {/* Carreras */}
+            <div className={`module-card ${rol === 'Administrador' ? 'card-animate-3' : 'card-animate-1'}`} onClick={() => manejarNavegacion('/carreras')}>
               <div className="module-icon icon-careers">🎓</div>
               <div className="module-details">
                 <h3>Carreras</h3>
@@ -91,13 +102,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="module-card" onClick={() => navigate('/materias')}>
+            {/* Materias */}
+            <div className={`module-card ${rol === 'Administrador' ? 'card-animate-4' : 'card-animate-2'}`} onClick={() => manejarNavegacion('/materias')}>
               <div className="module-icon icon-subjects">📘</div>
               <div className="module-details">
                 <h3>Materias</h3>
                 <p>Administrar el catálogo de asignaturas y cargas horarias.</p>
               </div>
             </div>
+
           </div>
         </main>
       </div>

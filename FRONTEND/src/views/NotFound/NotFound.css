@@ -1,0 +1,190 @@
+/* CONTAINER GENERAL PSICODÉLICO */
+.tonto-404-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 99999 !important;
+  overflow: hidden !important;
+  font-family: 'Comic Sans MS', 'Inter', sans-serif !important; /* Toque tonto en la fuente alternativa */
+}
+
+.tonto-grid-overlay {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: 
+    linear-gradient(to right, rgba(15, 113, 242, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 113, 242, 0.03) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+  z-index: 1 !important;
+}
+
+/* TARJETA CON CARÁCTER */
+.tonto-card {
+  position: relative !important;
+  z-index: 10 !important;
+  background-color: #ffffff !important;
+  border: 3px dashed #cbd5e1 !important; /* Borde punteado menos serio */
+  border-radius: 24px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05) !important;
+  padding: 32px !important;
+  width: 100% !important;
+  max-width: 420px !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  transition: transform 0.2s ease !important;
+}
+
+/* CONTENEDOR DE AVATAR DE LA API */
+.avatar-wrapper-absurdo {
+  width: 96px !important;
+  height: 96px !important;
+  margin: 0 auto 16px auto !important;
+  position: relative !important;
+}
+
+.avatar-tonto {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  border: 2px solid #0f71f2 !important;
+  animation: flotarTonto 3s ease-in-out infinite !important;
+}
+
+.ojos-giratorios {
+  position: absolute !important;
+  top: -10px !important;
+  right: -10px !important;
+  font-size: 24px !important;
+  animation: girarOjos 4s linear infinite !important;
+}
+
+/* MINI-JUEGO UI */
+.juego-tonto-box {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+  margin-bottom: 24px !important;
+}
+
+.juego-feedback {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  margin: 0 0 12px 0 !important;
+  line-height: 140% !important;
+}
+
+.texto-alerta { color: #ef4444 !important; }
+.texto-exito { color: #10b981 !important; }
+
+.juego-form {
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: center !important;
+}
+
+.juego-input {
+  width: 60px !important;
+  padding: 8px !important;
+  border: 2px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+.juego-input:focus {
+  outline: none !important;
+  border-color: #0f71f2 !important;
+}
+
+/* BOTONES */
+.btn-probar {
+  background-color: #0f71f2 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+.btn-probar:hover { background-color: #0c5dc7 !important; }
+
+.tonto-code {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  letter-spacing: 0.1em !important;
+  display: block !important;
+}
+
+.tonto-title {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 4px 0 20px 0 !important;
+}
+
+.tonto-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.btn-secondary-action {
+  background-color: #ffffff !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1 !important;
+  padding: 10px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+}
+
+.btn-secondary-action:hover {
+  background-color: #f8fafc !important;
+}
+
+.btn-trampa {
+  background: transparent !important;
+  border: none !important;
+  color: #94a3b8 !important;
+  font-size: 11px !important;
+  cursor: pointer !important;
+  text-decoration: underline !important;
+}
+
+/* ==========================================================================
+   ANIMACIONES RIDÍCULAS
+   ========================================================================== */
+@keyframes flotarTonto {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.02); }
+}
+
+@keyframes girarOjos {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animación de error (Sacudida física de la tarjeta) */
+.animacion-shake {
+  animation: shakeCard 0.4s ease-in-out !important;
+}
+
+@keyframes shakeCard {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}

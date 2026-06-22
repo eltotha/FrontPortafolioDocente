@@ -1,4 +1,6 @@
-/* CONTEXTO DE PANTALLA DIVIDIDA */
+/* ==========================================================================
+   CONTEXTO DE PANTALLA DIVIDIDA (LOGIN)
+   ========================================================================== */
 .modern-login-screen {
   width: 100vw !important;
   height: 100vh !important;
@@ -12,6 +14,7 @@
   display: flex !important;
   background-color: #f8fafc !important;
   font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  overflow: hidden !important;
 }
 
 /* PANEL IZQUIERDO: TEXTURA E IDENTIDAD COGNITIVA */
@@ -26,17 +29,15 @@
   display: flex !important;
   align-items: flex-start !important;
   
-  /* Layout del panel */
   width: 45% !important;
   height: 100% !important;
   
-  /* Gradiente Fintech Premium */
   background: linear-gradient(135deg, #0f172a 0%, #0f71f2 100%) !important;
   position: relative !important;
   z-index: 5 !important;
 }
 
-/* Opcional: Agregar un patrón geométrico sutil al panel izquierdo */
+/* Patrón geométrico sutil inferior en el panel izquierdo */
 .modern-login-screen::after {
   content: "Sistema centralizado de gestión y control académico." !important;
   position: absolute !important;
@@ -52,24 +53,20 @@
 /* CONTENEDOR DERECHO: DONDE FLOTA LA TARJETA */
 .modern-login-container {
   width: 55% !important;
-  max-width: none !important;
   height: 100% !important;
   background-color: #f8fafc !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
   box-sizing: border-box !important;
+  padding: 40px !important;
 }
 
-/* RE-ESTILIZAR LA FORMA INTERNA COMO LA TARJETA FINIX */
-.modern-login-form, .login-brand-header {
+.login-card-wrapper {
   width: 100% !important;
-  max-width: 380px !important; /* Mantiene el formulario compacto y centrado en su zona */
+  max-width: 380px !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .modern-login-form {
@@ -86,6 +83,7 @@
 .login-brand-header {
   margin-bottom: 20px !important;
   padding: 0 10px !important;
+  text-align: left !important;
 }
 
 .login-main-title {
@@ -147,4 +145,118 @@
   font-weight: 600 !important;
   cursor: pointer !important;
   margin-top: 10px !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.modern-btn-primary:hover {
+  background-color: #0c5dc7 !important;
+}
+
+/* NOTIFICACIÓN DE ERROR INTERNA */
+.modern-error-alert {
+  background-color: #fef2f2 !important;
+  border: 1px solid #fee2e2 !important;
+  border-radius: 8px !important;
+  color: #ef4444 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  padding: 10px 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-align: left !important;
+}
+
+/* ==========================================================================
+   ESTADOS DE ANIMACIÓN DE ENTRADA (KEYFRAMES)
+   ========================================================================== */
+.login-entering::before {
+  animation: slideInLeftLogin 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+.login-entering::after {
+  animation: fadeInTextLogin 0.5s ease forwards !important;
+  animation-delay: 0.4s !important;
+  opacity: 0;
+}
+
+.login-entering .login-card-wrapper {
+  animation: loginCardRise 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  animation-delay: 0.1s !important;
+  opacity: 0;
+}
+
+@keyframes slideInLeftLogin {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeInTextLogin {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes loginCardRise {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   ESTADOS DE ANIMACIÓN DE SALIDA (KEYFRAMES)
+   ========================================================================== */
+.login-leaving::before {
+  animation: slideOutLeftLogin 0.5s cubic-bezier(0.7, 0, 0.84, 0) forwards !important;
+}
+
+.login-leaving::after {
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.login-leaving .login-card-wrapper {
+  animation: loginCardDrop 0.4s cubic-bezier(0.7, 0, 0.84, 0) forwards !important;
+}
+
+@keyframes slideOutLeftLogin {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes loginCardDrop {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-15px); }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 968px) {
+  .modern-login-screen {
+    flex-direction: column !important;
+  }
+  .modern-login-screen::before {
+    width: 100% !important;
+    height: auto !important;
+    padding: 40px 32px !important;
+  }
+  .modern-login-screen::after {
+    display: none !important;
+  }
+  .modern-login-container {
+    width: 100% !important;
+    height: auto !important;
+    flex-grow: 1 !important;
+    padding: 32px 20px !important;
+    align-items: flex-start !important;
+  }
+  .login-card-wrapper {
+    max-width: 100% !important;
+  }
+  
+  @keyframes slideInLeftLogin {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+  }
+  @keyframes slideOutLeftLogin {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+  }
 }
